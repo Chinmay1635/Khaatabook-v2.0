@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khatabook</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <div id="main">
+        <!-- navbar -->
+        <nav>
+            <div id="left"><a href="#">Khatabook</a></div>
+            <div id="right">
+                <a href="http://localhost:3000/home/<%= userid%>">Home</a>
+                <a href="http://localhost:3000/">Log out</a>
+            </div>
+        </nav>
+        <h2>Welcome, <%= name%></h2>
+        <!-- filter -->
+        <div id="panel">
+            <div id="filter">
+                <h3>Filter <i class="ri-sound-module-line"></i></h3>
+                <h3>By Date <i class="ri-calendar-2-fill"></i></h3>
+                <form action="">
+                    <select name="filter" id="date-filter">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                    </select>
+                    <input class="btn" type="submit" value="Filter">
+                </form>
+            </div>
+            <div class="btn" id="create"><a href="http://localhost:3000/<%= userid%>/create">Create New</a></div>
+        </div>
+        <!-- Expenses cards -->
+        <div id="container">
+
+            <% expenseCard.forEach(function(expense){ if(expense.properties.encrypt){ %>
+                <div class="card">
+                    <div id="properties">
+                        <div class="encrypt">
+                            <div id="encrypt"><i class="ri-lock-fill"></i> Encrypted</div>
+                            <div id="icon"><i class="ri-eye-off-line"></i></div>
+                        </div>
+                        <div id="date">Created on <%= expense.date%>
+                        </div>
+                    </div>
+                    <div id="title">
+                        <%= expense.title%>
+                    </div>
+                    <div id="view">view expense</div>
+                    <div id="pass">
+                        <form method="post" action="http://localhost:3000/home/<%= userid%>/<%= expense._id%>/checkpass">
+                            <input type="password" name="inputpass" id="inputpass" placeholder="Enter password">
+                            <input class="btn" type="submit" value="view">
+                        </form>
+                    </div>
+                </div>
+                <% }else{ %>
+                    <div class="card">
+                        <div id="properties">
+                            <div id="available"><i class="ri-check-fill"></i>Available</div>
+                            <div id="date">Created on <%= expense.date%>
+                            </div>
+                        </div>
+                        <div id="title">
+                            <%= expense.title%>
+                        </div>
+                        
+                        <a href="http://localhost:3000/<%= userid%>/view/<%= expense._id%>">view expense</a>
+                    </div>
+                    <% } }) %>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

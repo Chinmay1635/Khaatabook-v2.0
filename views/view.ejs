@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khaatabook | View</title>
+    <link rel="stylesheet" href="/css/view.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+
+
+</head>
+
+<body>
+    <div id="main">
+        <!-- navbar -->
+        <nav>
+            <div id="left"><a href="#">Khatabook</a></div>
+            <div id="right">
+                <a href="http://localhost:3000/home">Home</a>
+                <a href="http://localhost:3000/">Log out</a>
+            </div>
+        </nav>
+        <div id="container">
+            <div id="panel">
+                <div id="encrypt"><i class="ri-lock-fill"></i> Encrypted</div>
+                <div id="icon"><i class="ri-eye-off-line"></i></div>
+                <div id="delete"><a href="http://localhost:3000/home/<%= userid%>/<%= expenseCardId %>/delete">Delete</a></div>
+                <div id="edit"><a href="http://localhost:3000/home/<%= userid%>/<%= expenseCardId %>/edit">Edit</a></div>
+            </div>
+            <div id="date">Created on 16-03-2005</div>
+            <div id="title"><h2><%= expenseCard.title%></h2></div>
+            <div id="description"><%= expenseCard.description%></div>
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khatabook | Create</title>
+    <link rel="stylesheet" href="/css/edit.css">
+
+</head>
+<body>
+    <div id="main">
+        <!-- navbar -->
+        <nav>
+            <div id="left"><a href="#">Khatabook</a></div>
+            <div id="right">
+                <a href="http://localhost:3000/home/<%= userid%>">Home</a>
+                <a href="http://localhost:3000/">Log out</a>
+            </div>
+        </nav>
+
+        <!-- edit expense -->
+         <div id="container">
+            <h2>Edit your Expense</h2>
+            <form action="http://localhost:3000/home/<%= userid%>/<%=expenseCard._id%>/edited" method="post">
+                <input type="text" name="title" id="title" placeholder="Enter title of expense" value="<%=expenseCard.title%>">
+                <textarea name="description" id="description" rows="17" cols="60" placeholder="Describe your expense"><%=expenseCard.description%></textarea>
+                <div id="properties">
+                    <input type="checkbox" name="encrypt" id="encrypt" <%= expenseCard.properties.encrypt ? 'checked' : '' %>>
+                    <label for="encrypt">Encrypt this file</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    
+                    <input type="checkbox" name="sharable" id="sharable" <%= expenseCard.properties.sharable ? 'checked' : '' %>>
+                    <label for="sharable">Sharable File</label>
+                    <br><br>
+
+                    <input type="password" name="password" id="pass" placeholder="Password" value="expenseCard.properties.password">
+                    &nbsp;&nbsp;&nbsp;
+
+                    <div id="edit">
+                    <input type="checkbox" name="edit" id="editbox" <%= expenseCard.properties.edit ? 'checked' : '' %>>
+                    <label for="editox">Edit permission</label>
+                </div>
+                </div>
+                <input type="submit" class="btn" value="Edit">
+            </form>
+         </div>
+
+    </div>
+    
+    <script src="/js/createnew.js"></script>
+</body>
+</html>

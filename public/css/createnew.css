@@ -1,0 +1,77 @@
+@font-face {
+    font-family: gilroy;
+    src: url(/fonts/Gilroy-Regular.ttf);
+}
+
+html,body{
+width:100%;
+height:100%;
+}
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: gilroy;
+
+}
+
+#main{
+    width: 100%;
+    padding: 1vw 3vw;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+nav{
+    width: 100%;
+    padding: 1vw 3vw;
+    background-color: rgb(0, 102, 245);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    border-radius: 100px;
+    letter-spacing: 2px;
+}
+#right a, #left a{
+    font-size: 1.5vw;
+    font-weight: 900;
+}
+#right{
+    display: flex;
+    gap: 2vw;
+}
+#container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2vmax;
+}
+#title{
+    width: 20%;
+    padding: 0.7vw 1.2vw;
+}
+.btn{
+    padding: 0.4vw 1vw;
+    background-color: rgb(0, 102, 245);
+    color: white;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+}
+
+#pass{
+    visibility:hidden;
+    display: inline-block;
+}
+#edit{
+    visibility:hidden;
+    display: inline-block;
+}

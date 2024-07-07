@@ -17,16 +17,16 @@
         <nav>
             <div id="left"><a href="#">Khatabook</a></div>
             <div id="right">
-                <a href="http://localhost:3000/home/<%= userid%>">Home</a>
-                <a href="http://localhost:3000/">Log out</a>
+                <a href="/home/<%= userid%>">Home</a>
+                <a href="/">Log out</a>
             </div>
         </nav>
         <div id="container">
             <div id="panel">
                 <div id="encrypt"><i class="ri-lock-fill"></i> Encrypted</div>
                 <div id="icon"><i class="ri-eye-off-line"></i></div>
-                <div id="delete"><a href="http://localhost:3000/home/<%= userid%>/<%= expenseCardId %>/delete">Delete</a></div>
-                <div id="edit"><a href="http://localhost:3000/home/<%= userid%>/<%= expenseCardId %>/edit">Edit</a></div>
+                <div id="delete"><a href="/home/<%= userid%>/<%= expenseCardId %>/delete">Delete</a></div>
+                <div id="edit"><a href="/home/<%= userid%>/<%= expenseCardId %>/edit">Edit</a></div>
             </div>
             <div id="date">Created on 16-03-2005</div>
             <div id="title"><h2><%= expenseCard.title%></h2></div>

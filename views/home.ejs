@@ -17,8 +17,8 @@
         <nav>
             <div id="left"><a href="#">Khatabook</a></div>
             <div id="right">
-                <a href="http://localhost:3000/home/<%= userid%>">Home</a>
-                <a href="http://localhost:3000/">Log out</a>
+                <a href="/home/<%= userid%>">Home</a>
+                <a href="/">Log out</a>
             </div>
         </nav>
         <h2>Welcome, <%= name%></h2>
@@ -35,7 +35,7 @@
                     <input class="btn" type="submit" value="Filter">
                 </form>
             </div>
-            <div class="btn" id="create"><a href="http://localhost:3000/<%= userid%>/create">Create New</a></div>
+            <div class="btn" id="create"><a href="/<%= userid%>/create">Create New</a></div>
         </div>
         <!-- Expenses cards -->
         <div id="container">
@@ -55,7 +55,7 @@
                     </div>
                     <div id="view">view expense</div>
                     <div id="pass">
-                        <form method="post" action="http://localhost:3000/home/<%= userid%>/<%= expense._id%>/checkpass">
+                        <form method="post" action="/home/<%= userid%>/<%= expense._id%>/checkpass">
                             <input type="password" name="inputpass" id="inputpass" placeholder="Enter password">
                             <input class="btn" type="submit" value="view">
                         </form>
@@ -72,7 +72,7 @@
                             <%= expense.title%>
                         </div>
                         
-                        <a href="http://localhost:3000/<%= userid%>/view/<%= expense._id%>">view expense</a>
+                        <a href="/<%= userid%>/view/<%= expense._id%>">view expense</a>
                     </div>
                     <% } }) %>
         </div>

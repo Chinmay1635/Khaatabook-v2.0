@@ -13,15 +13,15 @@
         <nav>
             <div id="left"><a href="#">Khatabook</a></div>
             <div id="right">
-                <a href="http://localhost:3000/home/<%= userid%>">Home</a>
-                <a href="http://localhost:3000/">Log out</a>
+                <a href="/home/<%= userid%>">Home</a>
+                <a href="/">Log out</a>
             </div>
         </nav>
 
         <!-- create expense -->
          <div id="container">
             <h2>Create New Expense</h2>
-            <form action="http://localhost:3000/<%= userid%>/expensecreate" method="post">
+            <form action="/<%= userid%>/expensecreate" method="post">
                 <input type="text" name="title" id="title" placeholder="Enter title of expense">
                 <textarea name="description" id="description" rows="17" cols="60" placeholder="Describe your expense"></textarea>
                 <div id="properties">

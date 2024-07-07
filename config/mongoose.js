@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const debugLog = require('debug')('development:mongooseconfig');
-mongoose.connect("mongodb://127.0.0.1:27017/khatabook");
+mongoose.connect("mongodb+srv://chinmaykulkarni165:f2EVbqLtf0gRgOqJ@cluster0.ujfttbw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
 
 const db = mongoose.connection;
 
